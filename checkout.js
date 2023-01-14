@@ -1,30 +1,10 @@
-const express = require('express')
-const router = express.Router()
 const stripe = Stripe('pk_test_51MOgjgB55MqJsEUBvQWZmlrgJYHgZ7EdEiB8z2HVky5FhxWkDtr2dmz8lbvdmSjVwSYLDAF6v1uec9FbBTkcKLoD00WDb0HtNp')
 
-
-router.post('/', async (req, res) => {
-    const total = req.body.total
-    const result = await getResult(total, fetched)
-    const clientSecret = await result.json
-    if (clientSecret) {
-        processTransaction(clientSecret)
-        res.json({"success": true})
-    } else {
-        res.json({"success": false})
-    }
-    
-})
-
-async function getResult(total, fetched) {
-    const result = fetch("/create-payment-intent", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ "amount": total })
-            })
-             
-    return result
-}
+window.onmessage = (event) => {
+     if (event.data) {
+       console.log(`HTML Component received a message: ${event.data}`);
+       processTransaction(event.data)
+     }
 
 async function processTransaction(clientSecret) {
     const paymentOptions = getOptions(clientSecret) 
