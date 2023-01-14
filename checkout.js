@@ -1,10 +1,5 @@
 const stripe = Stripe('pk_test_51MOgjgB55MqJsEUBvQWZmlrgJYHgZ7EdEiB8z2HVky5FhxWkDtr2dmz8lbvdmSjVwSYLDAF6v1uec9FbBTkcKLoD00WDb0HtNp')
 
-window.onmessage = (event) => {
-     if (event.data) {
-       console.log(`HTML Component received a message: ${event.data}`);
-       processTransaction(event.data)
-     }
 
 async function processTransaction(clientSecret) {
     const paymentOptions = getOptions(clientSecret) 

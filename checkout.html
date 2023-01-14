@@ -5,12 +5,20 @@
     <meta charset="utf-8" />
     <title>Accept a payment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://github.com/brian-cairns/stripe-payment.git/checkout.css" />
+    <link rel="stylesheet" href="checkout.css" />
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="https://github.com/brian-cairns/stripe-payment.git/checkout.js"></script>
+    <script src="checkout.js"></script>
 </head>
 
 <body>
+    <script type="text/javascript">
+        window.onmessage = (event) => {
+            if (event.data) {
+                console.log(`HTML Component received a message: ${event.data}`);
+                processTransaction(event.data)
+            }
+        }
+    </script>
     <!-- Display a payment form -->
     <form id="payment-form">
         <div id="payment-element">
@@ -23,4 +31,5 @@
         <div id="payment-message" class="hidden"></div>
     </form>
 </body>
+
 </html>
