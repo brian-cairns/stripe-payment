@@ -1,0 +1,24 @@
+{
+  "name": "stripe-payment",
+  "version": "1.0.0",
+  "description": "Simple interface for stripe payment element within Wix",
+  "main": "checkout.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brian-cairns/stripe-payment.git"
+  },
+  "keywords": [
+    "stripe",
+    "payment",
+    "element"
+  ],
+  "author": "Brian Cairns",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brian-cairns/stripe-payment/issues"
+  },
+  "homepage": "https://github.com/brian-cairns/stripe-payment#readme"
+}

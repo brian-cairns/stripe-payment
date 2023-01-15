@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  stripepayment:
+    image: stripepayment
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+      - 8080:8080
+      - 443:443
+      - 4242:4242
